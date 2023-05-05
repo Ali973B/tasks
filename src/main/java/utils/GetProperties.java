@@ -25,10 +25,6 @@ public abstract class GetProperties {
             XPathExpression xPathExpression = xPath.compile("//url[@name='hostUrl']");
             String string = xPathExpression.evaluateExpression(document, String.class);
             String url = string.substring(9, string.length() - 2);
-            XPathExpression xPathExpression1 = xPath.compile("//url[@name='otherUrl']");
-            String s = xPathExpression1.evaluateExpression(document, String.class);
-            for (int i = 0; i < s.length(); i++)
-                System.out.println(s.charAt(i));
             return url;
 
         } catch (Exception e) {
