@@ -25,8 +25,7 @@ public abstract class BaseElement {
     public WebElement getElement(){
         boolean waitedForPresence = WaitUtils.waitForPresence(uniqueLocator);
         if (waitedForPresence){
-            WebElement element = driver.findElement(uniqueLocator);
-            return element;
+            return driver.findElement(uniqueLocator);
         }
         throw new NoSuchElementException("Element is not found");
     }
