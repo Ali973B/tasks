@@ -2,19 +2,15 @@ package utils;
 
 import exceptions.UrlNotFound;
 import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.xpath.XPath;
-import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathFactory;
 import java.io.File;
 
-public abstract class GetProperties {
+public class GetProperties {
     private static final String filePath = "src/main/resources/properties.xml";
 
     public static String getHostUrl() {

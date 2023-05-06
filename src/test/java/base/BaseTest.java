@@ -1,16 +1,21 @@
 package base;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import utils.Browser;
 
 public abstract class BaseTest {
     protected WebDriver driver;
 
     @BeforeTest
-    public final void initializeDriver(){
+    public final void initializeDriver() {
+        driver = Browser.getInstance();
+    }
 
-        driver = Browser.newInstance()
+    @AfterTest
+    public void quitDriver() {
+        driver.close();
+        driver.quit();
     }
 }
